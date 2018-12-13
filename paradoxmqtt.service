@@ -1,0 +1,16 @@
+[Unit]
+Description=paradoxmqtt
+
+[Service]
+PIDFile=/tmp/paradoxmqtt.pid
+User=homeassistant
+Group=homeassistant
+Restart=always
+KillSignal=SIGQUIT
+WorkingDirectory=/home/homeassistant/apps/ParadoxHassMQTT
+ExecStart=/home/homeassistant/apps/ParadoxHassMQTT/app.js
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
